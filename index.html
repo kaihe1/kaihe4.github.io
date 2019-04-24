@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+  </head>
+  
+  <body>
+    <script>
+      function setup() {
+        createCanvas(window.innerWidth,window.innerHeight,WEBGL)
+        img = loadImage("ball.png");
+      }
+      function draw() {
+        background(255);
+        var locX = mouseX - width/2;
+        var locY = mouseY - height/2;
+        //directionalLight(r,b,g,x,y.z)
+        directionalLight(129,15,230,-locX,-locY,-175);
+        specularMaterial(255);//determine the reflection
+        noStroke();
+        rotateX(mouseY/400);
+        rotateY(mouseX/400);
+        sphere(389);
+        texture(img);
+      }
+    </script>
+  </body>
+</html>
