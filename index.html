@@ -7,10 +7,14 @@
     <script>
     var img;
     
+      function preload() {
+         img = loadImage("ball.png");
+      }
+      
       function setup() {
         createCanvas(window.innerWidth,window.innerHeight,WEBGL)
-        img = loadImage("ball.png");
       }
+      
       function draw() {
         background(255);
         var locX = mouseX - width/2;
